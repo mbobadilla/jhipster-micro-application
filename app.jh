@@ -1,0 +1,51 @@
+
+
+entity Categoria(CATEGORIA){
+id Long ,
+descripcion String required minlength(100),
+}
+entity Subcategoria(SUB_CATEGORIA){
+id Long ,
+descripcion String required minlength(100),
+}
+
+
+
+relationship OneToMany {
+  Categoria{subcategorias} to Subcategoria{categoria}
+}
+
+relationship ManyToOne {
+  Subcategoria{categoria} to Categoria
+}
+
+entity Imagen{
+id Long ,
+orden Integer
+
+}
+
+entity Producto(PRODUCTO) {
+id Long ,
+titulo String required minlength(50),
+descripcion String required minlength(100),
+}
+
+entity Caracteristica(CARACTERISTICA) {
+    id Long ,
+    descripcion String required minlength(100),
+    valor Double required
+}
+
+relationship OneToMany {
+    Subcategoria{caracteristicas} to Caracteristica{subcategoria}
+}
+
+relationship ManyToOne {
+  Caracteristica{subcategoria} to Subcategoria
+}
+
+relationship OneToMany {
+    Producto{imagenes} to Imagen{producto}
+}
+

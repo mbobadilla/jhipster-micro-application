@@ -1,0 +1,33 @@
+{
+    "name": "Categoria",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "100"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subcategoria",
+            "otherEntityRelationshipName": "categoria",
+            "relationshipName": "subcategorias"
+        }
+    ],
+    "changelogDate": "20200221203800",
+    "entityTableName": "categoria",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "jhipsterMicroservices",
+    "applications": "*",
+    "microserviceName": "jhipsterMicroservices"
+}

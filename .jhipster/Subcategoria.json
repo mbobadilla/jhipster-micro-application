@@ -1,0 +1,47 @@
+{
+    "name": "Subcategoria",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "100"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "caracteristica",
+            "otherEntityRelationshipName": "subcategoria",
+            "relationshipName": "caracteristicas"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "categoria",
+            "otherEntityRelationshipName": "subcategoria",
+            "relationshipName": "categoria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "categoria",
+            "otherEntityRelationshipName": "subcategorias",
+            "relationshipName": "categoria",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200221203900",
+    "entityTableName": "sub_categoria",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "jhipsterMicroservices",
+    "applications": "*",
+    "microserviceName": "jhipsterMicroservices"
+}

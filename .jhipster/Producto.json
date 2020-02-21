@@ -1,0 +1,42 @@
+{
+    "name": "Producto",
+    "fields": [
+        {
+            "fieldName": "titulo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "50"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "100"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "imagen",
+            "otherEntityRelationshipName": "producto",
+            "relationshipName": "imagenes"
+        }
+    ],
+    "changelogDate": "20200221204100",
+    "entityTableName": "producto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "jhipsterMicroservices",
+    "applications": "*",
+    "microserviceName": "jhipsterMicroservices"
+}

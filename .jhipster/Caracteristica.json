@@ -1,0 +1,48 @@
+{
+    "name": "Caracteristica",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "100"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subcategoria",
+            "otherEntityRelationshipName": "caracteristica",
+            "relationshipName": "subcategoria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subcategoria",
+            "otherEntityRelationshipName": "caracteristicas",
+            "relationshipName": "subcategoria",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200221204200",
+    "entityTableName": "caracteristica",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "jhipsterMicroservices",
+    "applications": "*",
+    "microserviceName": "jhipsterMicroservices"
+}

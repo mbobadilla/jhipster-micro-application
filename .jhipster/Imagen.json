@@ -1,0 +1,29 @@
+{
+    "name": "Imagen",
+    "fields": [
+        {
+            "fieldName": "orden",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "producto",
+            "otherEntityRelationshipName": "imagenes",
+            "relationshipName": "producto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200221204000",
+    "entityTableName": "imagen",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "jhipsterMicroservices",
+    "applications": "*",
+    "microserviceName": "jhipsterMicroservices"
+}

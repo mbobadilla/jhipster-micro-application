@@ -44,9 +44,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/jhipstermicroservices;DB_CLOSE_DELAY=-1
-    username: jhipsterMicroservices
-    password:
+    url: jdbc:mysql://localhost:3306/subasta_microservice?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 12345
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -54,7 +54,9 @@ spring:
     console:
       enabled: false
   jpa:
+    generate-ddl: true
     show-sql: true
+    database-platform : org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.connection.provider_disables_autocommit: true
@@ -65,6 +67,12 @@ spring:
       hibernate.cache.hazelcast.instance_name: jhipsterMicroservices
       hibernate.cache.use_minimal_puts: true
       hibernate.cache.hazelcast.use_lite_member: true
+      hibernate.jdbc.time_zone: UTC
+  hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
